@@ -45,32 +45,6 @@ class LambdaFunctionTest(unittest.TestCase):
         expected_response = {'main_character': 'naruto'}
         self.assertEqual(response, expected_response)
 
-    # def test_get_zero_pending_request(self):
-    #     user_data_list = [
-    #         {'user_email': 'satish@test.com', 'user_status': 'APPROVED'},
-    #         {'user_email': 'satiar@test.com', 'user_status': 'REJECTED'}
-    #     ]
-    #     for data in user_data_list:
-    #         self.registration_status_table.put_item(Item=data)
-    #     import lambda_function
-    #     response = lambda_function.lambda_handler({"EventName": "ListAllPendingRequest"}, None)
-    #     expected_response = {'status': 'success', 'statusCode': 200, 'body': []}
-    #     self.assertEqual(response, expected_response)
-    #
-    # def test_invalid_event_in_request_body(self):
-    #     import lambda_function
-    #     response = lambda_function.lambda_handler({"EventName": "InvalidEvent"}, None)
-    #     expected_response = {'status': 'Bad Request', 'statusCode': 400, 'body': 'Invalid Event'}
-    #     self.assertEqual(response, expected_response)
-    #
-    # def test_invalid_event_schema_in_request_body(self):
-    #     import lambda_function
-    #     response = lambda_function.lambda_handler({"InvalidEventNameKey": "InvalidEvent"}, None)
-    #     expected_response = {'status': 'bad request', 'statusCode': 400, 'body': 'EventName not present in incoming '
-    #                                                                              'event'}
-    #     print(response)
-    #     self.assertEqual(response, expected_response)
-
     def tearDown(self) -> None:
         print("Tearing down resources")
         self.registration_status_table.delete()

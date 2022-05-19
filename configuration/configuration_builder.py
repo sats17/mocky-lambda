@@ -13,6 +13,6 @@ def get_dynamodb_connection():
 
 print("Creating dynamodb connection from request service")
 dynamodb_connection = get_dynamodb_connection()
-print("Dynamodb connection ", dynamodb_connection)
+print("Dynamodb connection = ", dynamodb_connection)
 
 anime_table_name = os.environ['anime_table_name']
